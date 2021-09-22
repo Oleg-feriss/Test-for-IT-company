@@ -1,0 +1,21 @@
+{
+  "name": "itrex-js",
+  "version": "1.0.0",
+  "description": "Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Oleg-feriss/Test-for-IT-company"
+  },
+  "author": "Oleg Tarasiuk",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1"
+  }
+}

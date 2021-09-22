@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+#main-header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff4500;
+}
+
+#main-header h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 4rem;
+  color: white;
+  margin: 0;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+section {
+  margin: 5rem auto;
+  width: 60rem;
+  max-width: 90%;
+}
+
+.names {
+  border: 1px solid #ff4500;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1rem;
+  background-color: #ffa07a;
+  color: white;
+  font-weight: bold;
+  background-image: url(/assets/styles/img/clean-textile.png);
+}
+
+.names label {
+  margin-top: 4px;
+}
+
+#name-search {
+  outline: none;
+  border: none;
+  margin-left: 1rem;
+  border-radius: 1rem;
+  width: 40%;
+  font-size: 1rem;
+}
+
+#filter-by-state {
+  text-align: center;
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #d1834f;
+  background: linear-gradient(
+    90deg,
+    rgb(221, 135, 54) 0%,
+    rgb(129, 167, 69) 100%
+  );
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(211, 172, 45, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+}
+
+#filter-by-state:hover,
+#filter-by-state:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+#filter-by-state:hover::before,
+#filter-by-state:focus::before {
+  opacity: 1;
+}
+
+#filter-by-state::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #d49c23;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+#filter-by-state:hover::after,
+#filter-by-state:focus::after {
+  animation: none;
+  display: none;
+}
+
+#select-state {
+  padding: 1rem;
+}
+
+#filters {
+  display: flex;
+  justify-content: space-between;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  width: 16.6%;
+  background-color: #ff8c007e;
+}
+
+th:hover {
+  background-color: burlywood;
+  color: #ff4500;
+}
+
+tbody tr {
+  transition: background-color 0.3s linear;
+}
+
+tbody tr:hover {
+  background-color: #ffa07ab0;
+  color: chocolate;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: center;
+}
+
+.page-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.page-numbers button {
+  width: 50px;
+  height: 50px;
+
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  background-color: #ff4500;
+
+  margin: 5px;
+  transition: 0.4s;
+
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.page-numbers button:hover {
+  background: white;
+  color: #ff4500;
+  border: 1px solid;
+  border-color: #ff6347;
+}
+
+.page-numbers button.active {
+  background-color: white;
+  color: #ff4500;
+  border: 1px solid;
+  border-color: #ff6347;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+
+section#detailed-info.visible {
+  display: block;
+}
+
+section#detailed-info.hide {
+  display: none;
+}
+
+section#detailed-info {
+  border: 2px solid #ff4500;
+  border-radius: 3rem;
+  background: linear-gradient(-45deg, #f5e502, #3de058bd, #d48a295e, #eeff00d3);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+section#detailed-info p {
+  text-align: center;
+  padding: 1rem;
+}
+
+thead tr th.arrow-down::after {
+  content: '\2B9F';
+}
+
+thead tr th.arrow-up::after {
+  content: '\2b9d';
+}
